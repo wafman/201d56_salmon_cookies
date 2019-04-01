@@ -20,7 +20,9 @@ var Pike = {
     for(var i = 0; i < hours.length; i++){
       Math.floor(Math.random() * 66);
       console.log(i);
-      customers.push(i);
+      this.customers.push(i);
     }
+    console.log(this.customers);
+    return this.customers;
   },
 };
