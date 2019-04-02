@@ -15,8 +15,6 @@ var Pike = {
   cookies: [],
   total : 0,
 
-  // methods below here
-
   //this method generates random customer numbers for each our of the day
   generateRandom : function(){
     var randomNumber = Math.floor(Math.random() * Math.floor(this.maximum));
@@ -83,7 +81,9 @@ var Pike = {
         }
       }
     }
-    // document.textContent = 'total cookies';
+    var liTotal = document.createElement('li');
+    ulElement.appendChild(liTotal);
+    liTotal.textContent = `Total: ${this.generateTotal()}`;
   }
 };
 
@@ -168,7 +168,9 @@ var seaTac = {
         }
       }
     }
-    // document.textContent = 'total cookies';
+    var liTotal = document.createElement('li');
+    ulElement.appendChild(liTotal);
+    liTotal.textContent = `Total: ${this.generateTotal()}`;
   }
 };
 
@@ -252,7 +254,9 @@ var seaCenter = {
         }
       }
     }
-    // document.textContent = 'total cookies';
+    var liTotal = document.createElement('li');
+    ulElement.appendChild(liTotal);
+    liTotal.textContent = `Total: ${this.generateTotal()}`;
   }
 };
 
@@ -337,7 +341,9 @@ var capHill = {
         }
       }
     }
-    // document.textContent = 'total cookies';
+    var liTotal = document.createElement('li');
+    ulElement.appendChild(liTotal);
+    liTotal.textContent = `Total: ${this.generateTotal()}`;
   }
 };
 
@@ -421,7 +427,9 @@ var alki = {
         }
       }
     }
-    // document.textContent = 'total cookies';
+    var liTotal = document.createElement('li');
+    ulElement.appendChild(liTotal);
+    liTotal.textContent = `Total: ${this.generateTotal()}`;
   }
 };
 
