@@ -1,5 +1,9 @@
 'use strict';
 
+//issues to resolve still
+//there is a glitch with the total function. it's generating totals
+//that dont match with the hourly sales of cookies.
+
 //global variable for all store hours
 var hours = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
 
@@ -37,19 +41,19 @@ var Pike = {
     this.generateCustomers();
     for(var j = 0; j < this.customers.length; j++){
       var total = this.customers[j] * this.average;
-      this.cookies.push(total);
+      this.cookies.push(Math.round(total));
       // console.log(total);
     }
     console.log('generateCookies');
     console.log(this.cookies);
-    return Math.ceil(this.cookies);
+    return Math.round(this.cookies);
   },
 
   //this method generates the total amount of cookies
   generateTotal : function(){
     this.generateCookies();
     for(var k = 0; k < this.cookies.length; k++){
-      this.total += this.cookies[k];
+      this.total += Math.round(this.cookies[k]);
       console.log(this.total);
     }
     console.log('generate total');
@@ -93,9 +97,9 @@ var seaTac = {
   //starting data
   name : 'SeaTac',
   location: 'SeaTac Airport',
-  minimum : 23,
-  maximum : 65,
-  average : 6.3,
+  minimum : 3,
+  maximum : 24,
+  average : 1.2,
   customers : [],
   cookies: [],
   total : 0,
@@ -124,7 +128,7 @@ var seaTac = {
     this.generateCustomers();
     for(var j = 0; j < this.customers.length; j++){
       var total = this.customers[j] * this.average;
-      this.cookies.push(total);
+      this.cookies.push(Math.round(total));
       // console.log(total);
     }
     console.log('generateCookies');
@@ -179,9 +183,9 @@ var seaCenter = {
   //starting data
   name : 'Seattle Center',
   location: 'Seattle Center',
-  minimum : 23,
-  maximum : 65,
-  average : 6.3,
+  minimum : 11,
+  maximum : 38,
+  average : 3.7,
   customers : [],
   cookies: [],
   total : 0,
@@ -210,7 +214,7 @@ var seaCenter = {
     this.generateCustomers();
     for(var j = 0; j < this.customers.length; j++){
       var total = this.customers[j] * this.average;
-      this.cookies.push(total);
+      this.cookies.push(Math.round(total));
       // console.log(total);
     }
     console.log('generateCookies');
@@ -266,9 +270,9 @@ var capHill = {
   //starting data
   name : 'Capital Hill',
   location: 'Capital Hill',
-  minimum : 23,
-  maximum : 65,
-  average : 6.3,
+  minimum : 20,
+  maximum : 38,
+  average : 2.3,
   customers : [],
   cookies: [],
   total : 0,
@@ -297,7 +301,7 @@ var capHill = {
     this.generateCustomers();
     for(var j = 0; j < this.customers.length; j++){
       var total = this.customers[j] * this.average;
-      this.cookies.push(total);
+      this.cookies.push(Math.round(total));
       // console.log(total);
     }
     console.log('generateCookies');
@@ -352,9 +356,9 @@ var alki = {
   //starting data
   name : 'Alki',
   location: 'Alki',
-  minimum : 23,
-  maximum : 65,
-  average : 6.3,
+  minimum : 2,
+  maximum : 16,
+  average : 4.6,
   customers : [],
   cookies: [],
   total : 0,
@@ -383,7 +387,7 @@ var alki = {
     this.generateCustomers();
     for(var j = 0; j < this.customers.length; j++){
       var total = this.customers[j] * this.average;
-      this.cookies.push(total);
+      this.cookies.push(Math.round(total));
       // console.log(total);
     }
     console.log('generateCookies');
