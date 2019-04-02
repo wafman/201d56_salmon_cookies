@@ -1,0 +1,19 @@
+/* color pallette colors
+  sienna #bc4c34
+  peru #c6915d
+  sienna a46845
+  black 36342b
+  silver d0c9c2
+*/
+body {
+  background-color: #c6915d;
+  color: #d0c9c2;
+}
+
+
+header {
+  background-image: url(/img/salmon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
