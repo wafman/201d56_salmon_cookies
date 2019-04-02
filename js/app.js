@@ -43,7 +43,7 @@ var Pike = {
     }
     console.log('generateCookies');
     console.log(this.cookies);
-    return this.cookies;
+    return Math.floor(this.cookies);
   },
 
   //this method generates the total amount of cookies
@@ -63,11 +63,25 @@ var Pike = {
     this.generateCookies();
     var ulElement = document.createElement('ul');
     document.body.appendChild(ulElement);
+    // document.getElementById('obName').textContent = `${this.name}`;
     for(var l = 0; l < hours.length; l++){
       var liElement = document.createElement('li');
       ulElement.appendChild(liElement);
-      var write = ` ${this.hour[l]} + ': ' + ${this.cookies[l]} + ' cookies'`;
-      liElement.textContent = write;
+      if(hours[l] < 12){
+        var write = ` ${hours[l]}am: ${this.cookies[l]} cookies `;
+        liElement.textContent = write;
+      } else {
+        if(hours[l] === 12){
+          var write = ` ${hours[l]}pm: ${this.cookies[l]} cookies `;
+          liElement.textContent = write;
+        } else {
+          hours[l] -= 12;
+          var write = ` ${hours[l]}pm: ${this.cookies[l]} cookies `;
+          liElement.textContent = write;
+        }
+        
+      }
+      
     }
     // document.textContent = 'total cookies';
   }
