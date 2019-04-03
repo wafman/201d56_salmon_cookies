@@ -1,11 +1,8 @@
 'use strict';
 
-//issues to resolve still
-//there is a glitch with the total function. it's generating totals
-//that dont match with the hourly sales of cookies.
-
 //global variable for all store hours
-var hours = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ];
+var hours = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am',
+  '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', '8:00 pm' ];
 
 var stores = [];
 
@@ -132,58 +129,34 @@ function generateStoresTable(){
   tdEl.textContent = 'Total:';
   trEl.appendChild(tdEl);
   var allStoresTotalCookies = 0;
-  for(var i = 0; i < stores.length; i++){
-    allStoresTotalCookies += this.totalCookies[i];
+  for(var j = 0; j < stores.length; j++){
+    allStoresTotalCookies += stores[j].totalCookies[j];
   }
   tdEl = document.createElement('td');
   tdEl.textContent = allStoresTotalCookies;
   trEl.appendChild(tdEl);
 }
 
-//render function for table
-// function renderTable() {
+//trying to generate hourly total of cookies
+// function generateHourlyCookieTotals() {
+//   console.log('generating hourly cookie totals');
+//   var trEl = document.createElement('tr');
+//   var tdEl = document.createElement('td');
+//   tdEl.textContent = 'Daily Total:';
+//   trEl.appendChild(tdEl);
+//   for(var i = 0; i < stores.length; i++){
+//     for(var j = 0; j < this.cookiesEachHour[j]; j++){
 
-//   var tableEl = document.getElementById('storesTable');
-//   console.log('about to build table');
-//   //generates table head
-//   for(var i = 0; i < hours.length; i++){
-//     var trEl = document.createElement('tr');
-//     var thEl = document.createElement('th');
-//     if(hours[i] < 12){
-//       var am = `${hours[i]}:00am`;
-//       thEl.textContent = am;
-//       trEl.appendChild(thEl);
-//     } else {
-//       if(hours[i] === 12){
-//         var noon = `${hours[i]}:00pm`;
-//         thEl.textContent = noon ;
-//         trEl.appendChild(thEl);
-//       } else {
-//         hours[i] -= 12;
-//         var pm = `${hours[i]}:00pm`;
-//         thEl.textContent = pm;
-//         trEl.appendChild(thEl);
-//       }
 //     }
 //   }
-
-
-//   //generates remaining table
-//   // for(var j = 0; j < stores.length; j++){
-//   //   var trEltd = document.createElement('tr');
-//   //   var tdEl = document.createElement('td');
-//   //   tableEl.appendChild(tdEl);
-//   //   tdEl.textContent = `${this.storeName[j]}`;
-//   //   for(var k = 0; this.cookiesEachHour; k++){
-//   //     tdEl = document.createElement('td');
-//   //     tableEl.appendChild(tdEl);
-//   //     tdEl.textContent = `${this.cookiesEachHour[k]}`;
-//   //   }
-//   //   var tdTotal = document.createElement('td');
-//   //   tableEl.appendChild(tdTotal);
-//   //   tdTotal.textContent = `${this.totalCookies}`;
-//   // }
-
+  // for(var i = 0; i < hours.length + 1; i++){
+  //   tdEl = document.createElement('td');
+  //   dailyTotal += this.cookiesEachHour[i];
+  //   console.log(dailyTotal);
+  // }
+  // console.log('final total is: ' + dailyTotal);
+  // tdEl.textContent = dailyTotal;
+  // trEl.appendChild(tdEl);
 // }
 
 //testing constructor
@@ -202,3 +175,4 @@ var alki = new Store('Alki', 'Alki', 2, 16, 4.6);
 // renderTable();
 makeHeaderRow();
 generateStoresTable();
+generateHourlyCookieTotals();
