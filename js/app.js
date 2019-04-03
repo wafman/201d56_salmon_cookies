@@ -88,10 +88,9 @@ Store.prototype.render = function() {
   this.generateCookies();
   console.log('store prototype render');
   var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
   var tdEl = document.createElement('td');
-  thEl.textContent = this.storeName;
-  trEl.appendChild(thEl);
+  tdEl.textContent = this.storeName;
+  trEl.appendChild(tdEl);
   for(var i = 0; i < this.cookiesEachHour.length; i++){
     tdEl = document.createElement('td');
     tdEl.textContent = this.cookiesEachHour[i];
@@ -109,7 +108,7 @@ function makeHeaderRow(){
   var thEl = document.createElement('th');
   thEl.textContent = 'Location:';
   trEl.appendChild(thEl);
-  for(var i = 0; i < hours.length; i++){
+  for(var i = 0; i < hours.length +1; i++){
     console.log(hours[i]);
     thEl = document.createElement('th');
     thEl.textContent = `${hours[i]}`;
