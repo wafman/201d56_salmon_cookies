@@ -137,6 +137,28 @@ function generateStoresTable(){
   trEl.appendChild(tdEl);
 }
 
+function makeFooterRow(){
+  for(var i = 0; i < stores.length; i++){
+    for(var j = 0; j < stores[i].cookiesEachHour.length +1; j++){
+      console.log(hours[j]);
+      thEl = document.createElement('th');
+      var dailyTotal += 
+      thEl.textContent = `${hours[j]}`;
+      // trEl.appendChild(thEl);
+      // storesTable.appendChild(trEl);
+    }
+  }
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Hourly Total:';
+  trEl.appendChild(thEl);
+
+  // thEl.textContent = 'Daily Location Total';
+  // trEl.appendChild(thEl);
+  // storesTable.appendChild(trEl);
+}
+
+
 //trying to generate hourly total of cookies
 // function generateHourlyCookieTotals() {
 //   console.log('generating hourly cookie totals');
@@ -175,4 +197,4 @@ var alki = new Store('Alki', 'Alki', 2, 16, 4.6);
 // renderTable();
 makeHeaderRow();
 generateStoresTable();
-generateHourlyCookieTotals();
+makeFooterRow();
