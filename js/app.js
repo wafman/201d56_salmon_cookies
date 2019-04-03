@@ -53,14 +53,16 @@ function generateRandom(max, min){
 }
 
 function addTableData(x, y){
-  console.log('addtableData function called');
+  // console.log('addtableData function called');
+  clearFooter();
   for(var i = 0; i < x.y; i++){
-    console.log('looping on add table data');
+    // console.log('looping on add table data');
     var trEl = document.createElement('tr');
     var tdEl = document.createElement('td');
     tdEl.textContent = i;
     trEl.appendChild(tdEl);
   }
+  makeFooterRow();
 }
 
 // thEl = document.createElement('th');
@@ -89,6 +91,7 @@ Store.prototype.generateCookies = function() {
     // console.log('cookies this hours: ' + this.cookiesEachHour[i]);
     this.totalCookies += oneHour;
   }
+  grandCookieTotal += this.totalCookies;
   // console.log('total cookies is: ' + this.totalCookies);
   return this.cookiesEachHour;
 };
@@ -177,6 +180,7 @@ function generateStoresTable(){
 //loop through hours then stores for footer row
 function makeFooterRow(){
   var trEl = document.createElement('tr');
+  trEl.id = 'footer';
   var thEl = document.createElement('th');
   // console.log(thEl);
   thEl.textContent = 'Hourly totals';
@@ -187,15 +191,12 @@ function makeFooterRow(){
     for(var k = 0; k < stores.length; k ++){
       // console.log('looping stores');
       hourlyTotal += stores[k].cookiesEachHour[i];
-      grandCookieTotal += hourlyTotal;
     }
     // console.log('hourly total is: ' + hourlyTotal);
-    // console.log('grand total is ' + grandCookieTotal);
     var tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
   }
-  // console.log('grand cookie total test: ' + grandCookieTotal);
   thEl = document.createElement('th');
   thEl.textContent = grandCookieTotal;
   trEl.appendChild(thEl);
@@ -203,6 +204,14 @@ function makeFooterRow(){
   storesTable.appendChild(trEl);
 }
 
+//inspiration came from stackoverflow article at https://stackoverflow.com/questions/10686888/delete-last-row-in-table
+function clearFooter() {
+  console.log('clear footer called');
+  var target = document.getElementById('storesTable');
+  var targetRow = target.rows.length;
+  console.log(targetRow - 1);
+  target.deleteRow(targetRow - 2);
+}
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // EVENT HANDLERS
@@ -224,6 +233,11 @@ function addStoreToTable(event) {
   storeName.render();
   // console.log('store name is: ' + storeName.storeName);
   addTableData(storeName, storeName.generateCookies);
+  event.target.storeName.value = null;
+  event.target.storeLocation.value = null;
+  event.target.minCustomer.value = null;
+  event.target.maxCustomer.value = null;
+  event.target.avgCookie.value = null;
 }
 
 
