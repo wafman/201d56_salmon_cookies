@@ -156,7 +156,6 @@ function makeFooterRow(){
     }
     console.log('hourly total is: ' + hourlyTotal);
     console.log('grand total is ' + grandCookieTotal);
-    // trEl = document.createElement('tr');
     var tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
