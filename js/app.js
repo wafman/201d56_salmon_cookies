@@ -86,7 +86,7 @@ Store.prototype.generateCookies = function() {
 Store.prototype.render = function() {
   this.generateCustomers();
   this.generateCookies();
-  console.log('store prototype render');
+  // console.log('store prototype render');
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
   tdEl.textContent = this.storeName;
@@ -126,6 +126,18 @@ function generateStoresTable(){
     // console.log(stores[i]);
     stores[i].render();
   }
+  //need to generate new row with hourly total of all stores
+  var trEl = document.createElement('tr');
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Total:';
+  trEl.appendChild(tdEl);
+  var allStoresTotalCookies = 0;
+  for(var i = 0; i < stores.length; i++){
+    allStoresTotalCookies += this.totalCookies[i];
+  }
+  tdEl = document.createElement('td');
+  tdEl.textContent = allStoresTotalCookies;
+  trEl.appendChild(tdEl);
 }
 
 //render function for table
