@@ -209,7 +209,6 @@ function clearFooter() {
   console.log('clear footer called');
   var target = document.getElementById('storesTable');
   var targetRow = target.rows.length;
-  console.log(targetRow - 1);
   target.deleteRow(targetRow - 2);
 }
 
