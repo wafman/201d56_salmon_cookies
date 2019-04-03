@@ -17,3 +17,15 @@ header {
   background-position: center;
   background-size: cover;
 }
+
+table, th, td {
+  border: 1px solid #36342b;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background-color: #a46845;
+
+  font-weight: bold;
+}
