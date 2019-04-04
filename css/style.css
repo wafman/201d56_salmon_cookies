@@ -13,9 +13,18 @@ body {
 
 header {
   background-image: url(/img/salmon.png);
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  height: 240px;
+  /* background-position: center; */
+}
+
+header h1 {
+  text-align: center;
+  vertical-align: bottom;
+  font-weight: bold;
+  font-size: 5em;
 }
 
 table, th, td {
@@ -26,6 +35,30 @@ table, th, td {
 
 th {
   background-color: #a46845;
-
   font-weight: bold;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+form {
+  width: auto;
+  color: #d0c9c2;
+  padding: 10px;
+  margin: 10px;
+}
+
+form input {
+  border-radius: 25px;
+  font-size: 8px;
+  width: 120px;
+  text-align: center;
+  color: #d0c9c2;
+}
+
+.submit {
+  background-color: #bc4c34;
+  width: 60px;
 }
