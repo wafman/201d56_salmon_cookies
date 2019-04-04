@@ -1,5 +1,8 @@
 'use strict';
 
+//bugs to work out
+//the render function on the new row call is causing the cookie total to be added 3 times. 
+
 
 ///++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //                             DATA                                     \\
@@ -64,11 +67,6 @@ function addTableData(x, y){
   }
   makeFooterRow();
 }
-
-// thEl = document.createElement('th');
-// thEl.textContent = `${hours[i]}`;
-// trEl.appendChild(thEl);
-// storesTable.appendChild(trEl);
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // CORE FUNCTIONS
@@ -206,6 +204,7 @@ function makeFooterRow(){
 
 //inspiration came from stackoverflow article at https://stackoverflow.com/questions/10686888/delete-last-row-in-table
 function clearFooter() {
+  // grandCookieTotal = 0;
   console.log('clear footer called');
   var target = document.getElementById('storesTable');
   var targetRow = target.rows.length;
@@ -231,9 +230,9 @@ function addStoreToTable(event) {
   var avgCookie = event.target.avgCookie.value;
   var storeVariable = new Store(storeName, storeLocation, minCustomer, maxCustomer, avgCookie);
   storeVariable.render();
-  storeVariable.generateCustomers();
+  // storeVariable.generateCustomers();
   console.log('generateCustomers = ' + storeVariable.customersEachHour);
-  storeVariable.generateCookies();
+  // storeVariable.generateCookies();
   console.log('generateCookies = ' + storeVariable.generateCookies);
   // console.log('store name is: ' + storeName.storeName);
   addTableData(storeName, storeName.generateCookies);
@@ -242,6 +241,7 @@ function addStoreToTable(event) {
   event.target.minCustomer.value = null;
   event.target.maxCustomer.value = null;
   event.target.avgCookie.value = null;
+  grandCookieTotal = 0; //added to try and reset cookie total when new row added
 }
 
 
