@@ -229,8 +229,12 @@ function addStoreToTable(event) {
   var minCustomer = event.target.minCustomer.value;
   var maxCustomer = event.target.maxCustomer.value;
   var avgCookie = event.target.avgCookie.value;
-  storeName = new Store(storeName, storeLocation, minCustomer, maxCustomer, avgCookie);
-  storeName.render();
+  var storeVariable = new Store(storeName, storeLocation, minCustomer, maxCustomer, avgCookie);
+  storeVariable.render();
+  storeVariable.generateCustomers();
+  console.log('generateCustomers = ' + storeVariable.customersEachHour);
+  storeVariable.generateCookies();
+  console.log('generateCookies = ' + storeVariable.generateCookies);
   // console.log('store name is: ' + storeName.storeName);
   addTableData(storeName, storeName.generateCookies);
   event.target.storeName.value = null;
