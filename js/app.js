@@ -18,6 +18,7 @@ var hours = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am',
 var stores = [];
 
 var grandCookieTotal = 0;
+// var grandCookieTotal = []; //changed from 0 to an array, will need to push to array, then iterate over aray when building totals row. 
 
 var storesTable = document.getElementById('storesTable');
 
@@ -89,6 +90,7 @@ Store.prototype.generateCookies = function() {
     // console.log('cookies this hours: ' + this.cookiesEachHour[i]);
     this.totalCookies += oneHour;
   }
+  // grandCookieTotal.push(this.totalCookies);
   grandCookieTotal += this.totalCookies;
   // console.log('total cookies is: ' + this.totalCookies);
   return this.cookiesEachHour;
@@ -195,12 +197,21 @@ function makeFooterRow(){
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
   }
+  // var total = 0;
+  // console.log('length of grandcookietotal is: ' + grandCookieTotal.length);
+  // for(var j = 0; j < grandCookieTotal.length; j++){ //this whole for loop is new to generate through new grandcookietotal array
+  //   console.log('j = ' + j);
+  //   total += j;
+    
+  // }
+  // console.log('grandcookietotal for loop total is: ' + total);
   thEl = document.createElement('th');
-  thEl.textContent = grandCookieTotal;
+  thEl.textContent = grandCookieTotal; //changed from grandcookietotal when moving from number to array
   trEl.appendChild(thEl);
   // console.log(trEl);
   storesTable.appendChild(trEl);
 }
+
 
 //inspiration came from stackoverflow article at https://stackoverflow.com/questions/10686888/delete-last-row-in-table
 function clearFooter() {
@@ -229,6 +240,8 @@ function addStoreToTable(event) {
   var avgCookie = event.target.avgCookie.value;
   var storeVariable = new Store(storeName, storeLocation, minCustomer, maxCustomer, avgCookie);
   storeVariable.render();
+  console.log('new creation total cookies' + storeVariable.totalCookies);
+  // grandCookieTotal.push(storeVariable.totalCookies);
   // storeVariable.generateCustomers();
   console.log('generateCustomers = ' + storeVariable.customersEachHour);
   // storeVariable.generateCookies();
@@ -240,7 +253,7 @@ function addStoreToTable(event) {
   event.target.minCustomer.value = null;
   event.target.maxCustomer.value = null;
   event.target.avgCookie.value = null;
-  grandCookieTotal = 0; //added to try and reset cookie total when new row added
+  // grandCookieTotal = 0; //added to try and reset cookie total when new row added
 }
 
 
@@ -267,6 +280,7 @@ var alki = new Store('Alki', 'Alki', 2, 16, 4.6);
 makeHeaderRow();
 generateStoresTable();
 makeFooterRow();
+// console.log('grandcookietotal is: ' + grandCookieTotal);
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // EVENT LISTENERS
