@@ -5,3 +5,5 @@ Monday: Initializing Lab structure. Hard coding stores as object and preparing s
 Tuesday: Refactoring code to eliminate hard coding objects. Created object function for the stores and initiated the individual stores to reproduce the list items. Elminiated the list items and replaced with DOM manipulated HTML Table. 
 
 Wednesday: Add a form element onto the sales page so that a user can input a new store with the necessary values and populate that store using javascript events onto the table. Refactor code where possible. 
+
+Thursday/Friday: Build out user facing page with additional images customer requested. 
