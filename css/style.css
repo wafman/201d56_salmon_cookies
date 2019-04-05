@@ -10,6 +10,36 @@ body {
   color: #d0c9c2;
 }
 
+a {
+  text-decoration: none;
+  color: #d0c9c2;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  margin: 10px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 10px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  margin: 5px;
+}
+
+ul li {
+  margin-left: 20px;
+  list-style: url(/img/salmon.png);
+}
 
 header {
   background-image: url(/img/salmon.png);
@@ -27,6 +57,29 @@ header h1 {
   font-size: 5em;
 }
 
+main {
+  width: 80%;
+  margin: auto;
+}
+
+div {
+  margin: 10px;
+}
+
+nav a {
+  background-image: url(/img/chinook.jpg);
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 10px;
+  padding: 5px;
+}
+
 table, th, td {
   border: 1px solid #36342b;
   padding: 5px;
@@ -38,16 +91,11 @@ th {
   font-weight: bold;
 }
 
-.container {
-  width: 80%;
-  margin: auto;
-}
-
 form {
   width: auto;
   color: #d0c9c2;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 20px;
 }
 
 form input {
@@ -61,4 +109,10 @@ form input {
 .submit {
   background-color: #bc4c34;
   width: 60px;
+}
+
+footer {
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
 }
