@@ -43,7 +43,7 @@ ul li {
 
 header {
   width: 960px;
-  margin: 0px auto;
+  margin: 2px auto;
   background-color: #36342b;
   /* background-image: url(/img/salmon.png);
   background-size: auto;
@@ -60,17 +60,6 @@ header h1 {
   font-size: 5em;
 }
 
-main {
-  width: 960px;
-  margin: 0px auto;
-}
-
-div {
-  margin: 10px;
-}
-
-
-
 nav ul {
   text-align: center;
 }
@@ -80,6 +69,74 @@ nav ul li {
   margin: 10px;
   padding: 5px;
 }
+
+main {
+  width: 960px;
+  margin: 20px auto;
+}
+
+.welcome div {
+  margin: 20px;
+}
+
+.welcome img {
+  width: 50%;
+  float: left;
+}
+
+section {
+  /* border: 1px solid black; */
+  height: 300px;
+  margin: 20px;
+}
+
+section h3 {
+  margin: 20px;
+  text-decoration: underline;
+}
+
+section ul {
+  text-align: center; 
+}
+
+section li {
+  list-style: none;
+  line-height: 2em;
+}
+
+section img {
+  float: left;
+  height: 300px;
+}
+
+div {
+  clear: both;
+  /* border: 1px solid black; */
+  width: 960px;
+  margin: 20px auto;
+}
+
+.storefront {
+  height: 400px;
+  margin: 20px;
+}
+
+.storefront h3 {
+  margin: 20px; 
+  text-decoration: underline;
+}
+
+.storefront li {
+  list-style: none;
+  text-align: center;
+  line-height: 2em;
+}
+
+.storefront img{
+  float: right;
+  width: 400px;
+}
+
 
 table, th, td {
   border: 1px solid #36342b;
@@ -121,6 +178,13 @@ footer {
 
 }
 
-img {
+/* img {
   width: 150px;
+} */
+
+#hoursTable {
+  clear: both;
+  text-align: center;
+  margin: 50px auto;
+  margin-top: 50px;
 }
