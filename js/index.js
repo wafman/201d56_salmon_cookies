@@ -21,6 +21,7 @@ var storesTable = document.getElementById('storesTable');
 
 var hoursTable = document.getElementById('hoursTable');
 
+var imgIndex = 0;
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //CONSTRUCTOR FUNCTIONS
@@ -148,6 +149,20 @@ function generateHoursTable(){
 
 
 
+function slideShow(){
+  var imgClass = document.getElementsByClassName('store');
+  for(var i = 0; i < imgClass.length; i++){
+    imgClass[i].style.display = 'none';
+  }
+  imgIndex++;
+  if(imgIndex > imgClass.length){
+    imgIndex = 1;
+  }
+  imgClass[imgIndex - 1].style.display = 'block';
+  setTimeout(slideShow, 2000);
+}
+
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // EVENT HANDLERS
 
@@ -174,6 +189,7 @@ var alki = new Store('Alki', 'Alki', 2, 16, 4.6);
 
 
 generateHoursTable();
+slideShow();
 
 // console.log('grandcookietotal is: ' + grandCookieTotal);
 
