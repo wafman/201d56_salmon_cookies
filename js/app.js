@@ -2,7 +2,9 @@
 
 //bugs to work out
 //the render function on the new row call is causing the cookie total to be added 3 times. 
-
+// export function stores() {
+//   return stores;
+// }
 
 ///++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //                             DATA                                     \\
@@ -23,6 +25,8 @@ var grandCookieTotal = 0;
 var storesTable = document.getElementById('storesTable');
 
 var storeForm = document.getElementById('createStore');
+
+
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -197,13 +201,6 @@ function makeFooterRow(){
     tdEl.textContent = hourlyTotal;
     trEl.appendChild(tdEl);
   }
-  // var total = 0;
-  // console.log('length of grandcookietotal is: ' + grandCookieTotal.length);
-  // for(var j = 0; j < grandCookieTotal.length; j++){ //this whole for loop is new to generate through new grandcookietotal array
-  //   console.log('j = ' + j);
-  //   total += j;
-    
-  // }
   // console.log('grandcookietotal for loop total is: ' + total);
   thEl = document.createElement('th');
   thEl.textContent = grandCookieTotal; //changed from grandcookietotal when moving from number to array
@@ -221,6 +218,8 @@ function clearFooter() {
   var targetRow = target.rows.length;
   target.deleteRow(targetRow - 2);
 }
+
+
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // EVENT HANDLERS
@@ -277,9 +276,12 @@ var alki = new Store('Alki', 'Alki', 2, 16, 4.6);
 
 
 // renderTable();
+// generateHoursTableHeader();
+
 makeHeaderRow();
 generateStoresTable();
 makeFooterRow();
+
 // console.log('grandcookietotal is: ' + grandCookieTotal);
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
