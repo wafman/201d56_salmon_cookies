@@ -148,7 +148,7 @@ function generateHoursTable(){
 }
 
 
-
+//inspiration for this code came from https://www.w3schools.com/w3css/w3css_slideshow.asp
 function slideShow(){
   var imgClass = document.getElementsByClassName('store');
   for(var i = 0; i < imgClass.length; i++){
